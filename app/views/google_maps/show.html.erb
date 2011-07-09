@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lat:</b>
+  <%= @google_map.lat %>
+</p>
+
+<p>
+  <b>Lon:</b>
+  <%= @google_map.lon %>
+</p>
+
+<p>
+  <b>Zoom:</b>
+  <%= @google_map.zoom %>
+</p>
+
+
+<%= link_to 'Edit', edit_google_map_path(@google_map) %> |
+<%= link_to 'Back', google_maps_path %>

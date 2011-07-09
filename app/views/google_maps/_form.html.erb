@@ -1,0 +1,29 @@
+<%= form_for(@google_map) do |f| %>
+  <% if @google_map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@google_map.errors.count, "error") %> prohibited this google_map from being saved:</h2>
+
+      <ul>
+      <% @google_map.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lat %><br />
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :lon %><br />
+    <%= f.text_field :lon %>
+  </div>
+  <div class="field">
+    <%= f.label :zoom %><br />
+    <%= f.check_box :zoom %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Listing google_maps</h1>
+
+<table>
+  <tr>
+    <th>Lat</th>
+    <th>Lon</th>
+    <th>Zoom</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @google_maps.each do |google_map| %>
+  <tr>
+    <td><%= google_map.lat %></td>
+    <td><%= google_map.lon %></td>
+    <td><%= google_map.zoom %></td>
+    <td><%= link_to 'Show', google_map %></td>
+    <td><%= link_to 'Edit', edit_google_map_path(google_map) %></td>
+    <td><%= link_to 'Destroy', google_map, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Google map', new_google_map_path %>

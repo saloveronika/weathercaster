@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WheatherCaster</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "http://maps.google.com/maps?file=api&v=2&key=0-Tsl8GWIp25oPKembNC_P0rxEqpMw7ooP0VpMg" %>
+  <%= csrf_meta_tag %>
+</head>
+<body onload="initialize_maps()">
+<div id="map_canvas" style="width:50%; height:50%"></div>
+Latitude: <input class="required" type="text" name="latitude" id="latitude" value="49.83771950848911" />
+Longitude: <input class="required" type="text" name="longitude" id="longitude" value="24.008442163467407" />
+<br /><br />
+<!-- container for maps block -->
+<div id="map" style="width: 600px; height: 420px"></div>
+<%= yield %>
+</body>
+</html>
