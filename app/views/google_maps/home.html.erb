@@ -1,0 +1,12 @@
+<div id="map_canvas" style="width:50%; height:50%"></div>
+Latitude: <input class="required" type="text" name="latitude" id="latitude" value="49.83771950848911" />
+Longitude: <input class="required" type="text" name="longitude" id="longitude" value="24.008442163467407" />
+<br /><br />
+<!-- container for maps block -->
+<div id="map" style="width: 600px; height: 400px; float: left"></div>
+<!-- container for weather block -->
+<div id="weather" style="width: 400px; height: 400px; float: right">Weather</div>
+<%= form_for :weather, :remote => true, :url => {:action => 'show_weather'}, :html => {:id => 'post-form'} do |f| %>
+  <%= f.submit 'Show Weather '%>
+<% end %>
+<%=  image_tag("ajax-loader.gif", :size => "30x30", :alt => "Ajax Loader", :style => 'display: none', :id => 'loader')%>

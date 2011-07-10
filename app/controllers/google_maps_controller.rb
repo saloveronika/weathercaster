@@ -1,14 +1,23 @@
 class GoogleMapsController < ApplicationController
+  
+  before_filter :ident_ip
+
+  def home
+    # TODO implement geocode methods
+    # GoogleMap::MultiGeocoder.geocode(ip || city)
+  end
+
+  def show_weather
+    res = Net::HTTP.get('www.google.com', '/ig/api?weather=Lviv,,,498377195,24008442')
+    # TODO format and render xml data on weather block
+    render :xml => res
+  end
+
   # GET /google_maps
   # GET /google_maps.xml
   def index
-    # TODO: refactor GoogleMap class in controller
-    @google_maps = GoogleMap.all
 
-    # initial coordinates
-    @lat = params[:lat] || "49.837547"
-    @lon = params[:lon] || "24.008114"
-    @zoom = params[:zoom] || "5"
+    @google_maps = GoogleMap.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -86,4 +95,11 @@ class GoogleMapsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private 
+  
+  def ident_ip
+    @client_ip = request.remote_ip  
+  end
+
 end
