@@ -1,8 +1,10 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
+gem 'bson_ext'
 gem 'mongoid'
 gem 'bundler'
+gem 'geokit'
 
 # Bundle edge Rails instead:
 # gem
