@@ -10,7 +10,7 @@ class GoogleMapsController < ApplicationController
   def show_weather
     res = Net::HTTP.get('www.google.com', '/ig/api?weather=Lviv,,,498377195,24008442')
     # TODO format and render xml data on weather block
-    render :xml => res
+    render :text => "The Weater Block"
   end
 
   # GET /google_maps

@@ -1,0 +1,8 @@
+development:
+  api_key: ABQIAAAAfXb3zNCNpE54RDb-LxkORRSi9HP5lni-6vONaI2M5Fi1Fcr0YBStoxCndsCkr3SNuS6dNrPYzfDhvw
+
+test:
+  api_key: 0-Tsl8GWIp25oPKembNC_P0rxEqpMw7ooP0VpMg
+
+production:
+  api_key: 0-Tsl8GWIp25oPKembNC_P0rxEqpMw7ooP0VpMg

@@ -4,7 +4,7 @@
   <title>WheatherCaster</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag "http://maps.google.com/maps?file=api&v=2&key=0-Tsl8GWIp25oPKembNC_P0rxEqpMw7ooP0VpMg" %>
+  <%= javascript_include_tag "http://maps.google.com/maps?file=api&v=2&sensor=ture&key=#{API_KEY}" %>
   <%= csrf_meta_tag %>
 </head>
 <body onload="initialize_maps()">

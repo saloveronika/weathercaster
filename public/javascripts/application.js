@@ -26,8 +26,8 @@ function initialize_maps(){
                 point = marker.getPoint();
                 map.panTo(point);
                 // TODO use lat and long properties if needed
-                // document.getElementById("latitude").value = point.lat();
-                // document.getElementById("longitude").value = point.lng();
+                document.getElementById("latitude").value = point.lat();
+                document.getElementById("longitude").value = point.lng();
                 coordContainer = {lat: point.lat(), lng: point.lng()}
         });
     }
