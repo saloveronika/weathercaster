@@ -24,6 +24,7 @@ class GoogleMapsController < ApplicationController
             :temp => conditions[:temp_c][:data],
             :hum => conditions[:humidity][:data],
             :wind => conditions[:wind_condition][:data]}
+    Rails.logger.info("Weather hash: #{hash.to_s}")
     render :json => hash
   end
 
