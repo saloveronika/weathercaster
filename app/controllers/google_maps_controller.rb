@@ -3,8 +3,9 @@ class GoogleMapsController < ApplicationController
   before_filter :ident_ip
 
   def home
-    # TODO implement geocode methods
-    # GoogleMap::MultiGeocoder.geocode(ip || city)
+    @user_ip = user_ip
+    # TODO implement geocode methods GoogleMap::MultiGeocoder.geocode(ip || city)
+    @geocode_info = GoogleMap::MultiGeocoder.geocode(user_ip)
   end
 
   def show_weather
@@ -98,7 +99,7 @@ class GoogleMapsController < ApplicationController
   
   private 
   
-  def ident_ip
+  def user_ip
     @client_ip = request.remote_ip  
   end
 

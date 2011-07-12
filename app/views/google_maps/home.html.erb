@@ -10,3 +10,6 @@ Longitude: <input class="required" type="text" name="longitude" id="longitude" v
   <%= f.submit 'Show Weather '%>
 <% end %>
 <%=  image_tag("ajax-loader.gif", :size => "30x30", :alt => "Ajax Loader", :style => 'display: none', :id => 'loader')%>
+<h2>Your IP address: <%=  @user_ip %></h2>
+<h4>Geocode info</h4>
+<%= @geocode_info.inspect %>
