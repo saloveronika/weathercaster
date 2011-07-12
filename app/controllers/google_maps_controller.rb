@@ -9,9 +9,22 @@ class GoogleMapsController < ApplicationController
   end
 
   def show_weather
-    res = Net::HTTP.get('www.google.com', '/ig/api?weather=Lviv,,,498377195,24008442')
+    lat = params[:lat].blank? ? '498377195' : params[:lat].gsub(".","")[0..7]
+    lng = params[:lng].blank? ? '24008442' : params[:lng].gsub(".","")[0..7]
+    city = 'Lviv'
+    res = Net::HTTP.get("www.google.com", "/ig/api?weather=#{city},,,#{lat},#{lng}")
+    hash = Hash.from_xml(res)
+    hash = HashWithIndifferentAccess.new(hash)
+    weather = hash[:xml_api_reply][:weather]
+    info = weather[:forecast_information]
+    conditions= weather[:current_conditions]
+    forecast = weather[:forecast_conditions]
     # TODO format and render xml data on weather block
-    render :text => "The Weater Block"
+    hash = {:city => info[:city][:data],
+            :temp => conditions[:temp_c][:data],
+            :hum => conditions[:humidity][:data],
+            :wind => conditions[:wind_condition][:data]}
+    render :json => hash
   end
 
   # GET /google_maps

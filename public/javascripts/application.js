@@ -48,6 +48,7 @@ jQuery(function($) {
     .bind("ajax:before",  beforeLoad)
     .bind("ajax:complete", afterLoad)
     .bind("ajax:success", function(event, data, status, xhr) {
-      $("#weather").html(data);
+      console.dir(data);
+      $("#weather").html("City: hardcoded" + data.city + "<br/>" + "Temperature: " + data.temp + "C" + "<br/>" + data.hum + "<br/>" + data.wind);
     });
 });
