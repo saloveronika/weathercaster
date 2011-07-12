@@ -1,6 +1,6 @@
 class GoogleMapsController < ApplicationController
   
-  before_filter :ident_ip
+  before_filter :user_ip
 
   def home
     @user_ip = user_ip
